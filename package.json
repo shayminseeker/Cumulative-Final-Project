@@ -1,0 +1,26 @@
+{
+  "name": "cumulative-final-project",
+  "version": "1.0.0",
+  "description": "Helping your businesses effeciently and effortlessly.\r =======\r STRETCH GOALS:\r As a potential buyer of a product, I want to be able to purchase a product.\r As a buyer of a product, I want to be able to view a record of purchases I have made.\r As a seller of a product, I want to be able to view a record of sales of my products.\r =======",
+  "homepage": "https://github.com/shayminseeker/Cumulative-Final-Project#readme",
+  "bugs": {
+    "url": "https://github.com/shayminseeker/Cumulative-Final-Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayminseeker/Cumulative-Final-Project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx vite --host",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "cypress": "^15.11.0",
+    "vite": "^7.3.1"
+  }
+}
