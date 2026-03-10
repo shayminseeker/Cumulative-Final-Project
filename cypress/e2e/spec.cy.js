@@ -1,6 +1,6 @@
 describe('testimonials', () => {
   it('list testimonials', () => {
-    cy.visit('https://localhost:5173')
+    cy.visit('http://localhost:5173')
 
     cy.get("h1").should("have.text", "Testimonials");
 
@@ -10,7 +10,7 @@ describe('testimonials', () => {
   });
 
   it("creates testimonials", ()=>{
-    cy.visit('https://localhost:5173')
+    cy.visit('http://localhost:5173')
 
     const feedback = faker.commerce.productDescription()
     const rating = faker.number.int({min: 0, max: 5})
