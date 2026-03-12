@@ -23,6 +23,7 @@ app.MapGet("/products", async (ProductDb db) =>
 
 app.MapPost("/products", async (Product product, ProductDb db) =>
 {
+    Console.WriteLine(product.Inventory_Count);
     db.Products.Add(product);
     await db.SaveChangesAsync();
 
