@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj": {}
+    "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj": {
+    "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj",
-        "projectName": "TestimonialApi",
-        "projectPath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj",
+        "projectUniqueName": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
+        "projectName": "LoginApi",
+        "projectPath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
         "packagesPath": "C:\\Users\\web\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\obj\\",
+        "outputPath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

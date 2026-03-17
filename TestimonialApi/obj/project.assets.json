@@ -197,11 +197,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\web\\Documents\\GitHub\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj",
+      "projectUniqueName": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj",
       "projectName": "TestimonialApi",
-      "projectPath": "C:\\Users\\web\\Documents\\GitHub\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj",
+      "projectPath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\TestimonialApi.csproj",
       "packagesPath": "C:\\Users\\web\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\web\\Documents\\GitHub\\Cumulative-Final-Project\\TestimonialApi\\obj\\",
+      "outputPath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\TestimonialApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -268,7 +268,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

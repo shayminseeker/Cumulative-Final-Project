@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IaqJ8uof9Qg=",
+  "dgSpecHash": "fqZkP0kF2Ss=",
   "success": true,
-  "projectFilePath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\ProductApi\\ProductApi.csproj",
+  "projectFilePath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\web\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\10.0.3\\microsoft.aspnetcore.diagnostics.entityframeworkcore.10.0.3.nupkg.sha512",
     "C:\\Users\\web\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.3\\microsoft.entityframeworkcore.10.0.3.nupkg.sha512",

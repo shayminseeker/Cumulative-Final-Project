@@ -197,11 +197,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\ProductApi\\ProductApi.csproj",
-      "projectName": "ProductApi",
-      "projectPath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\ProductApi\\ProductApi.csproj",
+      "projectUniqueName": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
+      "projectName": "LoginApi",
+      "projectPath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
       "packagesPath": "C:\\Users\\web\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\ProductApi\\obj\\",
+      "outputPath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
