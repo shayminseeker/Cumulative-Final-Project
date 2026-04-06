@@ -1,0 +1,8 @@
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.csproj.AssemblyReference.cache
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.AssemblyInfoInputs.cache
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.AssemblyInfo.cs
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.csproj.CoreCompileInputs.cache
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\web\AppData\Local\GitHubDesktop\app-3.5.7\Cumulative-Final-Project\Login\LoginApi\obj\Debug\net10.0\LoginApi.sourcelink.json

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj": {}
+    "C:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj": {
+    "C:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
+        "projectUniqueName": "C:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
         "projectName": "LoginApi",
-        "projectPath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
+        "projectPath": "C:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Login\\LoginApi\\LoginApi.csproj",
         "packagesPath": "C:\\Users\\web\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\web\\Documents\\LoganB\\Cumulative-Final-Project\\Login\\LoginApi\\obj\\",
+        "outputPath": "C:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Login\\LoginApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\web\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\web\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
