@@ -1,0 +1,7 @@
+public class Login
+{
+    public int Id { get; set; }
+    public string Email { get; set; } = string.Empty;
+    // remember to replace with hash
+    public string Password { get; set; } = string.Empty;
+}

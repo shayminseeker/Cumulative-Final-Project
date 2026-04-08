@@ -1,73 +1,53 @@
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
-using System.Security.Cryptography;
-using System.Text;
+using Microsoft.Extensions.FileProviders;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add InMemory DB for users
+builder.Services.AddDbContext<LoginDb>(opt => opt.UseInMemoryDatabase("LoginList"));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<UserInfoDb>(opt => opt.UseInMemoryDatabase("UserDb"));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.ConfigureHttpJsonOptions(options => {
-    options.SerializerOptions.PropertyNameCaseInsensitive = true;
-});
-
 builder.Services.AddCors(options =>{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-    policy =>{
-        policy.WithOrigins("http://localhost:5173").AllowAnyMethod().AllowAnyHeader();
-    });
+	options.AddPolicy(name: MyAllowSpecificOrigins,
+	policy =>{
+		policy.WithOrigins("http://localhost:5173").AllowAnyMethod().AllowAnyHeader();
+	});
 });
 
 var app = builder.Build();
 
+var provider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory()));
+app.UseStaticFiles(new StaticFileOptions { FileProvider = provider, RequestPath = "" });
+
 app.UseCors(MyAllowSpecificOrigins);
 
-static string HashPassword(string? password)
+// Redirect root to login page
+app.MapGet("/", () => Results.Redirect("/login.html"));
+
+// GET all users (for testing/demo)
+app.MapGet("/users", async (LoginDb db) => await db.Users.ToListAsync());
+
+// Signup - create user
+app.MapPost("/signup", async (Login user, LoginDb db) =>
 {
-    if (string.IsNullOrEmpty(password)) return string.Empty;
-    using var sha = SHA256.Create();
-    var bytes = Encoding.UTF8.GetBytes(password);
-    var hash = sha.ComputeHash(bytes);
-    return Convert.ToBase64String(hash);
-}
+	// basic uniqueness check by email
+	var exists = await db.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == user.Email.ToLower());
+	if (exists is not null) return Results.Conflict(new { message = "User already exists" });
 
-public record RegisterRequest(string? Username, string? Email, string? Password);
-public record LoginRequest(string? Username, string? Password);
-
-app.MapPost("/register", async (RegisterRequest req, UserInfoDb db) =>
-{
-    if (string.IsNullOrWhiteSpace(req.Username) || string.IsNullOrWhiteSpace(req.Password))
-        return Results.BadRequest("Username and password are required");
-
-    var existing = await db.Users.FirstOrDefaultAsync(u => u.Username == req.Username);
-    if (existing is not null) return Results.Conflict("Username already exists");
-
-    var user = new UserInfo
-    {
-        Username = req.Username,
-        Email = req.Email,
-        PasswordHash = HashPassword(req.Password),
-        IsAdmin = false
-    };
-
-    db.Users.Add(user);
-    await db.SaveChangesAsync();
-
-    return Results.Created($"/users/{user.Id}", new { user.Id, user.Username, user.Email, user.IsAdmin });
+	db.Users.Add(user);
+	await db.SaveChangesAsync();
+	return Results.Created($"/users/{user.Id}", user);
 });
 
-app.MapPost("/login", async (LoginRequest req, UserInfoDb db) =>
+// Login - simple credential check
+app.MapPost("/login", async (Login creds, LoginDb db) =>
 {
-    if (string.IsNullOrWhiteSpace(req.Username) || string.IsNullOrWhiteSpace(req.Password))
-        return Results.BadRequest("Username and password are required");
+	var user = await db.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == creds.Email.ToLower());
+	if (user is null) return Results.Unauthorized();
+	if (user.Password != creds.Password) return Results.Unauthorized();
 
-    var user = await db.Users.FirstOrDefaultAsync(u => u.Username == req.Username);
-    if (user is null) return Results.Unauthorized();
-
-    var hash = HashPassword(req.Password);
-    if (user.PasswordHash != hash) return Results.Unauthorized();
-
-    return Results.Ok(new { user.Id, user.Username, user.Email, user.IsAdmin });
+	return Results.Ok(new { message = "Login successful", email = user.Email });
 });
 
 app.Run();
