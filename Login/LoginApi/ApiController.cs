@@ -5,34 +5,38 @@ using System.Net.Cache;
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    [HttpPost("signup")]
-    public IActionResult Signup([FromBody] SignupRequest request)
-    {
-        {
-            if (string.IsNullOrWithSpace(request.Email))
-            {
-                return BadRequest(new {message = "Email is required"});
-
-            }
-
-            if (string.IsNullOrWithSpace(request.Password))
-            {
-                return BadRequest(new {message = "Password is required"});
-
-            }
-            
-            if(!request.Email.Contains("@"))
-            {
-                return BadRequest(new {message = "Invalid email format"});
-            }
-
-            if(request.Password.Length < 6)
-            {
-                return BadRequest(new {message = "Password must be at least 6 characters long"});
-            }
-        }
     
-        return Ok(new{ message = "Validated"}
-);
+    
+    private readonly AuthService _authService;
+
+    public AuthController(AuthService authService)
+    {
+        _authService = authService;
+    }
+
+    [HttpPost("signup")]
+    public async Task<IActionResult> Signup([FromBody] SignupRequest request)
+    {
+        var (success, message) = await _authService.Signup(request.Firstname, request.Email, request.Password);
+
+        if (!success)
+        {
+            return BadRequest(new { message });
+        }
+
+        return Ok(new { message = "User registered successfully" });
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        var (success, message) = await _authService.Login(request.Email, request.Password);
+
+        if (!success)
+        {
+            return BadRequest(new { message });
+        }
+
+        return Ok(new { message = "Login successful" });
     }
 }
