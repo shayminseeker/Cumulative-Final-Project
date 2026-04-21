@@ -1,3 +1,7 @@
 {
-    "dotnet.defaultSolution": "Program.sln"
+	"dotnet.defaultSolution": "Program.sln",
+	"csharp-dev-tools.roslyn.projectOrSolutionFiles": [
+		"c:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Backend.slnx",
+		"c:\\Users\\web\\AppData\\Local\\GitHubDesktop\\app-3.5.7\\Cumulative-Final-Project\\Program.slnx"
+	]
 }
