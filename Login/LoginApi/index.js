@@ -42,16 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
 			try {
 				await signup(firstname, email, password);
 				alert('Signup successful!');
+				window.location.href = 'login.html';
 			} catch (error) {
 				document.getElementById('error-message').textContent = 'Signup failed';
 			}
 		} else {
 			try {
 				await login(email, password);
+				localStorage.setItem('isLoggedIn', 'true');
 				alert('Login successful!');
+				window.location.href = '../../dashboard.html';
 			} catch (error) {
 				document.getElementById('error-message').textContent = 'Login failed';
+				}
 			}
-		}
-	});
+		});
 });
