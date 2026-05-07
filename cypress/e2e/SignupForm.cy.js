@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 
 describe("Signup Form", () => {
 	it("allows users to enter and submit signup details", () => {
-		cy.visit("http://localhost:5173/signup.html");
+		cy.visit("http://localhost:5173/LoginApi/signup.html");
 
 		const firstName = faker.person.firstName();
 		const email = faker.internet.email();
@@ -33,14 +33,14 @@ describe("Signup Form", () => {
 		const email = faker.internet.email();
 		const password = faker.internet.password({ length: 8 });
 
-		cy.visit('http://localhost:5173/signup.html');
+		cy.visit('http://localhost:5173/LoginApi/signup.html');
 		cy.get('input[name="firstname"]').type(firstName);
 		cy.get('input[name="email"]').type(email);
 		cy.get('input[name="password"]').type(password);
 		cy.get('input[name="repeat-password"]').type(password);
 		cy.get('button[type="submit"]').click();
 
-		cy.url().should('include', '/Login/LoginApi/login.html');
+		cy.url().should('include', '/LoginApi/login.html');
 		cy.get('input[name="email"]').type(email);
 		cy.get('input[name="password"]').type(password);
 		cy.get('button[type="submit"]').click();
