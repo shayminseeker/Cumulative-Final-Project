@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.css" type="module"></script>
+    <title>Dashboard</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <p>Quick access to your product page and testimonials.</p>
+    </header>
+    <main>
+        <section class="cards">
+            <article id="product-card" class="card">
+                <h2>Products</h2>
+                <p>View the product catalog, add new items, or inspect product details on the product page.</p>
+                <a href="productPage.html">Go to Product Page</a>
+            </article>
+            <article class="card">
+                <h2>Testimonials</h2>
+                <p>See customer reviews and feedback collected from users on the testimonials page.</p>
+                <a href="Testimonials/create-testimonials.html">Go to Testimonials</a>
+            </article>
+        </section>
+        <section id="login-prompt" class="card" style="margin-top: 24px; display: none;">
+            <h2>Login Required</h2>
+            <p>You must login before the product page becomes available. Click below to sign in.</p>
+            <a href="LoginApi/login.html">Login</a>
+        </section>
+    </main>
+    <script>
+        const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const productCard = document.getElementById('product-card');
+        const loginPrompt = document.getElementById('login-prompt');
+        if (!loggedIn) {
+            productCard.style.display = 'none';
+            loginPrompt.style.display = 'block';
+        } else {
+            loginPrompt.style.display = 'none';
+            productCard.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

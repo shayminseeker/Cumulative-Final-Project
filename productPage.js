@@ -40,11 +40,60 @@ form.addEventListener("submit", async (e) => {
           body: JSON.stringify(body),
       });
       if (response.ok) {
-        window.location.href = "/productSuccess.html";
+        console.log("Worked");
+        window.location.href = "/ProductDisplay";
       } else {
         console.error('POST error:', response.status);
       }
     } catch (error) {
       console.error('Error posting product:', error);
     }
+
+    const card = document.querySelector("card");
+    
 });
+
+// async function loadProducts() {
+//   try {
+//     const response = await fetch("http://localhost:5007/products");
+//     console.log("are u working?")
+//     if (!response.ok) throw new Error(`API error: ${response.status}`);
+    
+//     const products = await response.json();
+//     const productGrid = document.getElementById("product-grid");
+    
+    
+//     productGrid.innerHTML = "";
+    
+   
+//     products.forEach(product => {
+//       const card = document.createElement("div");
+//       card.className = "product-card";
+      
+//       card.innerHTML = `
+//         <div class="card-header">
+//           <h3>${product.title}</h3>
+//         </div>
+//         <div class="card-body">
+//           <p class="description">${product.description}</p>
+//           <p class="price">$${parseFloat(product.price).toFixed(2)}</p>
+//           <p class="inventory">In Stock: ${product.inventory_Count}</p>
+//         </div>
+//         <div class="card-footer">
+//           <button class="btn-add-to-cart" data-id="${product.id}">Add to Cart</button>
+//         </div>
+//       `;
+      
+//       productGrid.appendChild(card);
+//     });
+    
+//   } catch (error) {
+//     console.error('Error loading products:', error);
+//     document.getElementById("product-grid").innerHTML = `
+//       <p class="error-message">Failed to load products. Please try again later.</p>
+//     `;
+//   }
+// }
+
+// // Load products when page loads
+// document.addEventListener("DOMContentLoaded", loadProducts);

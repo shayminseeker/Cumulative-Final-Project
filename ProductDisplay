@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="site-branding">
+            <h1>Shop Showcase</h1>
+            <p>Browse featured products and find something great.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-hero">
+            <div class="hero-copy">
+                <h2>Discover your next purchase</h2>
+                <p>Filter by category, price, or availability to see products tailored to your needs.</p>
+            </div>
+
+            <div class="filters">
+                <label for="search">Search products</label>
+                <input id="search" name="search" type="search" placeholder="Search by name or description">
+
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="all">All categories</option>
+                    <option value="new">New arrivals</option>
+                    <option value="popular">Popular</option>
+                </select>
+
+                <label for="sort">Sort by</label>
+                <select id="sort" name="sort">
+                    <option value="default">Featured</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="product-grid-section">
+            <h2>Product Listings</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Product cards will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Shop Showcase</p>
+    </footer>
+
+    <script src="productDisplay.js"></script>
+</body>
+</html>

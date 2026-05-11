@@ -11,6 +11,12 @@
             padding: 20px 24px;
             text-align: center;
         }
+        .navbar {
+            background : #2c3e50;
+            -webkit-text-fill-color: azure;
+            
+        }
+
         main {
             max-width: 960px;
             margin: 32px auto;
@@ -43,4 +49,88 @@
             color: white;
             padding: 10px 16px;
             border-radius: 8px;
+        }
+        
+        .product-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            margin-top: 24px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin: 0 0 8px 0;
+        }
+
+        .inventory {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin: 0;
+        }
+
+        .card-footer {
+            padding: 16px 20px;
+            border-top: 1px solid #ecf0f1;
+            background: #f8f9fa;
+        }
+
+        .btn-add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-add-to-cart:hover {
+            background: #2980b9;
+        }
+
+        .error-message {
+            text-align: center;
+            color: #e74c3c;
+            padding: 40px 20px;
+            font-size: 1.1rem;
         }
