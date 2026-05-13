@@ -44,3 +44,11 @@
             padding: 10px 16px;
             border-radius: 8px;
         }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
