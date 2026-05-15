@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ginger's Mercantile</title>
+    <title>Shop | Ginger's Mercantile</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <h1>Ginger's Mercantile</h1>
-        <p>Cheap Products for Everyone</p>
+        <p>Browse our product selection.</p>
         <nav>
             <a href="LoginApi/login.html">Login</a>
             <a href="shop.html">Shop</a>
@@ -18,9 +18,15 @@
     </header>
     <main>
         <section>
-            <h2>Welcome</h2>
-            <p>Explore the main pages for login, shopping, and customer testimonials.</p>
+            <h2>Shop</h2>
+            <p>Find products, compare prices, and review inventory availability.</p>
+        </section>
+        <section class="listing-grid" id="products">
+            <h3>Product Catalog</h3>
+            <div class="products-grid"></div>
+            <p class="empty-message">Loading products...</p>
         </section>
     </main>
+    <script src="shop.js" type="module"></script>
 </body>
 </html>

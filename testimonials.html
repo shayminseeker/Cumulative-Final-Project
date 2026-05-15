@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ginger's Mercantile</title>
+    <title>Testimonials | Ginger's Mercantile</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <h1>Ginger's Mercantile</h1>
-        <p>Cheap Products for Everyone</p>
+        <p>Read customer feedback and ratings.</p>
         <nav>
             <a href="LoginApi/login.html">Login</a>
             <a href="shop.html">Shop</a>
@@ -18,9 +18,15 @@
     </header>
     <main>
         <section>
-            <h2>Welcome</h2>
-            <p>Explore the main pages for login, shopping, and customer testimonials.</p>
+            <h2>Testimonials</h2>
+            <p>See what customers are saying about our products and service.</p>
+        </section>
+        <section class="listing-grid" id="testimonials">
+            <h3>Customer Reviews</h3>
+            <div class="testimonials-grid"></div>
+            <p class="empty-message">Loading testimonials...</p>
         </section>
     </main>
+    <script src="testimonials.js" type="module"></script>
 </body>
 </html>
