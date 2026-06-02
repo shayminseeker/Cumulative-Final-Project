@@ -13,21 +13,18 @@ public class AuthService
 
     public async Task<(bool Success, string Message)> Signup(string firstname, string email, string password)
     {
-      
-
-       
         var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         if (existingUser != null)
         {
             return (false, "Email is already registered");
         }
 
-       
         var user = new User
         {
             Firstname = firstname,
             Email = email,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password) 
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+            Role = "User"
         };
 
         _context.Users.Add(user);
@@ -36,14 +33,14 @@ public class AuthService
         return (true, "User registered successfully");
     }
 
-    public async Task<(bool Success, string Message)> Login(string email, string password)
+    public async Task<(bool Success, string Message, string Firstname, string Email, string Role)> Login(string email, string password)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
         {
-            return (false, "Invalid email or password");
+            return (false, "Invalid email or password", null, null, null);
         }
 
-        return (true, "Login successful");
+        return (true, "Login successful", user.Firstname, user.Email, user.Role);
     }
 }

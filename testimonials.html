@@ -8,15 +8,18 @@
 </head>
 <body>
     <header>
+        <button id="logout-button" class="logout-button" type="button">Logout</button>
         <h1>Ginger's Mercantile</h1>
         <p>Read customer feedback and ratings.</p>
         <nav>
             <a href="LoginApi/login.html">Login</a>
             <a href="shop.html">Shop</a>
             <a href="testimonials.html">Testimonials</a>
+            <span class="user-greeting" id="user-greeting" aria-live="polite"></span>
         </nav>
     </header>
     <main>
+        <a class="dashboard-link" href="adminDashboard.html">Back to Dashboard</a>
         <section>
             <h2>Testimonials</h2>
             <p>See what customers are saying about our products and service.</p>
@@ -28,5 +31,6 @@
         </section>
     </main>
     <script src="testimonials.js" type="module"></script>
+    <script src="auth.js" type="module"></script>
 </body>
 </html>

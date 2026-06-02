@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management | Ginger's Mercantile</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <button id="logout-button" class="logout-button" type="button">Logout</button>
+        <a class="dashboard-link" href="adminDashboard.html">Back to Dashboard</a>
+        <h1>User Management</h1>
+        
+    </header>
+    <main>
+        <section>
+            <h2>Existing Users</h2>
+            <div id="user-container">
+                <table class="user-list-table">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list"></tbody>
+                </table>
+            </div>
+            <p id="user-message" class="empty-message"></p>
+        </section>
+    </main>
+    <script src="userPage.js" type="module"></script>
+    <script src="auth.js" type="module"></script>
+</body>
+</html>

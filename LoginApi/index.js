@@ -7,7 +7,10 @@ async function signup(firstname, email, password) {
 		body: JSON.stringify({ firstname, email, password }),
 	});
 	const data = await response.json();
-	console.log(data);
+	if (!response.ok) {
+		throw new Error(data.message || 'Signup failed');
+	}
+	return data;
 }
 
 async function login(email, password) {
@@ -19,7 +22,10 @@ async function login(email, password) {
 		body: JSON.stringify({ email, password }),
 	});
 	const data = await response.json();
-	console.log(data);
+	if (!response.ok) {
+		throw new Error(data.message || 'Login failed');
+	}
+	return data;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,17 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
 				alert('Signup successful!');
 				window.location.href = 'login.html';
 			} catch (error) {
-				document.getElementById('error-message').textContent = 'Signup failed';
+				document.getElementById('error-message').textContent = error.message || 'Signup failed';
 			}
 		} else {
 			try {
-				await login(email, password);
+				const data = await login(email, password);
 				localStorage.setItem('isLoggedIn', 'true');
-				alert('Login successful!');
-				window.location.href = '../../dashboard.html';
-			} catch (error) {
-				document.getElementById('error-message').textContent = 'Login failed';
+				localStorage.setItem('username', data.firstname || data.email || email);
+				localStorage.setItem('role', data.role || 'User');
+
+				if (data.role === 'Admin') {
+					window.location.href = '../adminDashboard.html';
+				} else {
+					window.location.href = '../shop.html';
 				}
+			} catch (error) {
+				document.getElementById('error-message').textContent = error.message || 'Login failed';
 			}
-		});
+		}
+	});
 });

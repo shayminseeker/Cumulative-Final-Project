@@ -8,10 +8,9 @@
 </head>
 <body>
     <header>
+        <button id="logout-button" class="logout-button" type="button">Logout</button>
         <h1>Dashboard</h1>
         <p>Quick access to your product page and testimonials.</p>
-       
-        
     </header>
     <main>
         <section class="cards">
@@ -25,24 +24,44 @@
                 <p>See customer reviews and feedback collected from users on the testimonials page.</p>
                 <a href="Testimonials/create-testimonials.html">Go to Testimonials</a>
             </article>
+            <article class="card">
+                <h2>User Management</h2>
+                <p>View all registered users and manage admin-only account access.</p>
+                <a href="userPage.html">View Users</a>
+            </article>
         </section>
         <section id="login-prompt" class="card" style="margin-top: 24px; display: none;">
             <h2>Login Required</h2>
             <p>You must login before the product page becomes available. Click below to sign in.</p>
             <a href="LoginApi/login.html">Login</a>
         </section>
+        <section id="unauthorized-message" class="card" style="margin-top: 24px; display: none;">
+            <h2>Unauthorized</h2>
+            <p>Your account does not have admin access. Please login with an admin account to view this page.</p>
+            <a href="LoginApi/login.html">Login as Admin</a>
+        </section>
     </main>
     <script>
         const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const role = localStorage.getItem('role');
         const productCard = document.getElementById('product-card');
         const loginPrompt = document.getElementById('login-prompt');
+        const unauthorizedMessage = document.getElementById('unauthorized-message');
+
         if (!loggedIn) {
             productCard.style.display = 'none';
             loginPrompt.style.display = 'block';
+            unauthorizedMessage.style.display = 'none';
+        } else if (role !== 'Admin') {
+            productCard.style.display = 'none';
+            loginPrompt.style.display = 'none';
+            unauthorizedMessage.style.display = 'block';
         } else {
             loginPrompt.style.display = 'none';
+            unauthorizedMessage.style.display = 'none';
             productCard.style.display = 'block';
         }
     </script>
+    <script src="auth.js" type="module"></script>
 </body>
 </html>

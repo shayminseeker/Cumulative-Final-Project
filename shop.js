@@ -24,6 +24,7 @@ async function loadProducts() {
                 <p>${product.description}</p>
                 <p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
                 <p><strong>Inventory:</strong> ${product.inventory_Count}</p>
+                <button> Purchase </button>
             `;
             productsGrid.appendChild(card);
         }

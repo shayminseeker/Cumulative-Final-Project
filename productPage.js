@@ -29,7 +29,7 @@ form.addEventListener("submit", async (e) => {
         Title: formData.get("title"),
         Description: formData.get("description"),
         Price: parseFloat(formData.get("price")),
-        Inventory_Count: formData.get("inventory_count")
+        Inventory_Count: parseInt(formData.get("inventory_count"), 10)
     }
     try {
       const response = await fetch("http://localhost:5007/products",{
