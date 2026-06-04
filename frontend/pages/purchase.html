@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Product | Ginger's Mercantile</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <a class="dashboard-link" href="shop.html">Back to Shop</a>
+        <h1>Purchase Product</h1>
+    </header>
+    <main>
+        <section class="purchase-section">
+            <h2 id="product-title">Loading product...</h2>
+            <p id="product-description"></p>
+            <p><strong>Price:</strong> $<span id="product-price">0.00</span></p>
+            <p><strong>Inventory:</strong> <span id="product-inventory">0</span></p>
+            <form id="purchase-form">
+                <label for="quantity">Quantity:</label>
+                <input id="quantity" name="quantity" type="number" min="1" value="1" required>
+                <button type="submit">Complete Purchase</button>
+            </form>
+            <p id="purchase-message" class="empty-message"></p>
+        </section>
+    </main>
+    <script src="../scripts/purchase.js" type="module"></script>
+    <script src="../scripts/auth.js" type="module"></script>
+</body>
+</html>

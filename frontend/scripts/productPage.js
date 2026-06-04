@@ -40,7 +40,7 @@ form.addEventListener("submit", async (e) => {
           body: JSON.stringify(body),
       });
       if (response.ok) {
-        window.location.href = "/productSuccess.html";
+        window.location.href = "productSuccess.html";
       } else {
         console.error('POST error:', response.status);
       }

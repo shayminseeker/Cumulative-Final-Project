@@ -19,13 +19,22 @@ async function loadProducts() {
         for (const product of products) {
             const card = document.createElement('article');
             card.className = 'card-item';
+            const inventoryLabel = product.inventory_Count > 0 ? product.inventory_Count : 'Sold out';
             card.innerHTML = `
                 <h4>${product.title}</h4>
                 <p>${product.description}</p>
                 <p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
-                <p><strong>Inventory:</strong> ${product.inventory_Count}</p>
-                <button> Purchase </button>
+                <p><strong>Inventory:</strong> ${inventoryLabel}</p>
             `;
+
+            const purchaseButton = document.createElement('button');
+            purchaseButton.textContent = product.inventory_Count > 0 ? 'Purchase' : 'Sold Out';
+            purchaseButton.disabled = product.inventory_Count <= 0;
+            purchaseButton.addEventListener('click', () => {
+                window.location.href = `purchase.html?productId=${encodeURIComponent(product.id)}`;
+            });
+
+            card.appendChild(purchaseButton);
             productsGrid.appendChild(card);
         }
     } catch (error) {

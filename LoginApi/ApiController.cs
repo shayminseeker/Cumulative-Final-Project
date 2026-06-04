@@ -45,7 +45,7 @@ public class AuthController : ControllerBase
     public IActionResult GetUsers()
     {
         var users = _context.Users
-            .Select(u => new { u.Firstname, u.Email, u.Role })
+            .Select(u => new { u.id, u.Firstname, u.Email, u.Role })
             .ToList();
 
         return Ok(users);

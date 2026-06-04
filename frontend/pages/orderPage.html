@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management | Ginger's Mercantile</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <button id="logout-button" class="logout-button" type="button">Logout</button>
+        <a class="dashboard-link" href="adminDashboard.html">Back to Dashboard</a>
+        <h1>Order Management</h1>
+        
+    </header>
+    <main>
+        <section>
+            <h2>Existing Orders</h2>
+            <div id="order-container">
+                <table class="order-list-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-list"></tbody>
+                </table>
+            </div>
+            <p id="order-message" class="empty-message"></p>
+        </section>
+    </main>
+    <script src="../scripts/orderPage.js" type="module"></script>
+    <script src="../scripts/auth.js" type="module"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginLink = document.querySelector('a[href="LoginApi/login.html"]');
+    const loginLink = document.querySelector('a[href="../../LoginApi/login.html"]');
     const greeting = document.getElementById('user-greeting');
     const logoutButton = document.getElementById('logout-button');
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('username');
             localStorage.removeItem('role');
-            window.location.href = 'LoginApi/login.html';
+            window.location.href = '../../LoginApi/login.html';
         });
     }
 });

@@ -1,0 +1,1 @@
+public record PurchaseRequest(int Quantity);

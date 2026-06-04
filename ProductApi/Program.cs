@@ -12,7 +12,7 @@ builder.Services.ConfigureHttpJsonOptions(options => {
 builder.Services.AddCors(options =>{
     options.AddPolicy(name: MyAllowSpecificOrigins,
     policy =>{
-        policy.WithOrigins("http://localhost:5173").AllowAnyMethod().AllowAnyHeader();
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
 
@@ -20,6 +20,32 @@ var app = builder.Build();
 
 app.MapGet("/products", async (ProductDb db) =>
     await db.Products.ToListAsync());
+
+app.MapGet("/products/{id:int}", async (int id, ProductDb db) =>
+    await db.Products.FindAsync(id) is Product product ? Results.Ok(product) : Results.NotFound());
+
+app.MapPatch("/products/{id:int}/purchase", async (int id, PurchaseRequest request, ProductDb db) =>
+{
+    if (request.Quantity <= 0)
+    {
+        return Results.BadRequest(new { message = "Quantity must be at least 1." });
+    }
+
+    var product = await db.Products.FindAsync(id);
+    if (product is null)
+    {
+        return Results.NotFound();
+    }
+
+    if (product.Inventory_Count < request.Quantity)
+    {
+        return Results.BadRequest(new { message = "Not enough stock available." });
+    }
+
+    product.Inventory_Count -= request.Quantity;
+    await db.SaveChangesAsync();
+    return Results.Ok(product);
+});
 
 app.MapPost("/products", async (Product product, ProductDb db) =>
 {
